@@ -61,8 +61,8 @@ var i = 0;
 speed = 1024;
 update();
 desc1 = "The first three phases of U find the identity of the quintuple stored in the machine condition and replacing that machine condition with the action part of the identified quintuple.";
-desc2 = "In the fourth phase, U aims to perform the action on T’s tape as specified by the retrieved quintuple. It does write a 1 at the expected location, but then, however, the crafted input, consisting of As and Bs instead of the expected 0s and 1s, causes U’s head to shift far left into the user-provided data, placing the marker, M, representing T’s head, at an unexpected location."  
-  
+desc2 = "In the fourth phase, U aims to perform the action on T’s tape as specified by the retrieved quintuple. It does write a 1 at the expected location, but then, however, the crafted input, consisting of As and Bs instead of the expected 0s and 1s, causes U’s head to shift far left into the user-provided data, placing the marker, M, representing T’s head, at an unexpected location. At the end of U’s first execution cycle, not only T’s, but also U head comes to rest further to the left than expected. Importantly, U’s head is located to the left of the symbol Y indicating the end of T’s tape."  
+desc3 = "Because U’s head is located in the attacker-controlled segment of the tape, in it’s attempt to identify the next quintuple to execute, the first phase of U’s second execution cycle mistakenly refers to the injected machine condition, q(i)s(i) = BAA. Looking for 0s and 1s rather than As and Bs, it won’t find anything in the injected machine description. Instead, it encounters the first match, 100 at a rather random location, just before the Y representing the end of T’s tape. The initial 1 is the result of T’s first and successful print operation. The ensuing 00 are simply a part of a buffer between T’s tape and machine condition."  
   
 function describe() {
   document.getElementById("description").innerHTML = "";
@@ -70,6 +70,9 @@ function describe() {
     document.getElementById("description").innerHTML = desc1;
   }  
   if(i > 328 && i <= 378) {
+    document.getElementById("description").innerHTML = desc2;
+  }  
+  if(i > 378 && i <= 534) {
     document.getElementById("description").innerHTML = desc2;
   }  
 }

@@ -51,8 +51,8 @@
   <b>Phases</b></br>
   i:&nbsp;&nbsp;&nbsp;Locating current quintuple</br>
   ii:&nbsp;&nbsp;Copying next quintuple id and remembering symbol to write</br>
-  iv:&nbsp;&nbsp;Writing the symbol and housekeeping</br>
-  iii:&nbsp;Move head</br>
+  iii:&nbsp;Writing the symbol and housekeeping</br>
+  iv:&nbsp;&nbsp;Move head</br>
 </p>
 
 <script>
@@ -65,6 +65,8 @@ desc2 = "In the fourth phase, <i>U</i> aims to perform the action on <i>T'</i>s 
 desc3 = "Because <i>U'</i>s head is located in the attacker-controlled segment of the tape, in it's attempt to identify the next quintuple to execute, the first phase of <i>U'</i>s second execution cycle mistakenly refers to the injected machine condition, <i>q(i)s(i)</i> = <b>BAA</b>. Looking for <b>0</b>s and <b>1</b>s rather than <b>A</b>s and <b>B</b>s, it won't find anything in the injected machine description, <i>dI</i>. Instead, it encounters the first match, <b>100</b> at a rather random location, just before the <b>Y</b> representing the end of <i>T'</i>s tape. The initial <b>1</b> is the result of <i>T'</i>s first and successful print operation. The ensuing <b>00</b> are simply a part of a buffer between <i>T'</i>s tape and machine condition, Q<sub>T</sub>S<sub>T</sub>.";  
 desc4 = "In the second phase, attempting to collect the action part of the identified quintuple, <i>U</i> will find the four digits closest to the right of its head. While these were supposed to constitute the tail end of a quintuple, they are instead are pieces of the aforementioned buffer, of <i>T'</i>s machine condition, <i>q(t)s(t)</i>, and <i>T'</i>s first quintuple, jointly creating the string <b>0010</b>, which is thus interpreted as <i>Q<sub>ij</sub>S<sub>ij</sub>D<sub>ij</sub></i>. Furthermore, in the middle of the attempt to copy the first three digits to the injected machine condition, <i>q(i)s(i)</i>, <i>U</i> slips back to the right of the <b>Y</b> indicating the start of <i>T'</i>s machine condition, <i>q(t)s(T)</i>. The end result is that the first digit is copied to <i>q(i)</i> while the remaining part is copied to <i>q(t)s(t)</i>.";  
 desc5 = "The third phase reverts the <b>A</b>s and <b>B</b>s to <b>0</b>s and <b>1</b>s, and replaces <i>T'</i>s head, <b>M</b>, with a symbol indicating the direction of the next shift. <i>U'</i>s head is once again positioned far into the untrusted, user-provided data.";  
+desc6 = "In the fourth and final phase of the second execution cycle, <i>U</i> shifts <i>T'</i>s head one step and records in <i>I'</i>s machine condition, <i>q(i)s(i)</i>, the symbol under <b>M</b>. At this point, the compromise is complete, as the injected machine, <i>I</i>, is syntactically correct, and the head of <i>U</i> is located in the injected machine condition, <i>q(i)s(i)</i>, rather than in the originally intended one, <i>q(t)s(t)</i>. The head will never again traverse the <b>Y</b> denoting the end of <i>T'</i>s tape, interpreting it instead as the end of <i>I'</i>s machine description, <i>dI</i>.";
+desc6 = "The following execution cycles will faithfully execute the injected machine, <i>I</i>, wiping the contents of the inputs provided <i>I</i>.";
   
 function describe() {
   document.getElementById("description").innerHTML = "";
@@ -80,8 +82,14 @@ function describe() {
   if(i > 534 && i <= 619) {
     document.getElementById("description").innerHTML = desc4;
   }  
-  if(i > 619 && i <= 719) {
+  if(i > 619 && i <= 709) {
     document.getElementById("description").innerHTML = desc5;
+  }  
+  if(i > 709 && i <= 719) {
+    document.getElementById("description").innerHTML = desc6;
+  }  
+  if(i > 719) {
+    document.getElementById("description").innerHTML = desc7;
   }  
 }
   

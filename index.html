@@ -53,6 +53,7 @@
   </div>
 
 <script>
+  var trace = []
   fetch("trace.json")
   .then(response => response.json())
   .then(json => trace = json);

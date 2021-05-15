@@ -139,8 +139,10 @@ function goto_states(states) {
 
 function change_speed(factor) {
   speed = speed*factor;
-  clearTimeout(timer)
-  timer = setInterval(step, speed)
+  if (playing) {
+    clearTimeout(timer)
+    timer = setInterval(step, speed)
+  }
 }
 
 </script>

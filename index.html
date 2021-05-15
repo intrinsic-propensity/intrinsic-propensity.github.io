@@ -91,7 +91,7 @@ function describe() {
   
 function play_pause() {
   if (playing) {
-    clearTimeout(timer);
+    clearInterval(timer);
     playing = false;
   }
   else {
@@ -140,7 +140,7 @@ function goto_states(states) {
 function change_speed(factor) {
   speed = speed*factor;
   if (playing) {
-    clearTimeout(timer)
+    clearInterval(timer)
     timer = setInterval(step, speed)
   }
 }

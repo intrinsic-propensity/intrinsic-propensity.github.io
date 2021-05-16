@@ -9,11 +9,12 @@
       -webkit-text-size-adjust:100%;
       text-size-adjust:100%;
     }
-
-
-    .center-fit {
-      max-height: 70vh;
+    #container {
+      margin:auto; /* centers #container in body */
     }
+    #utm {
+      width:600px; height:794px; /* it's good style to specify img sizes */
+    } /* given the contents of every img, there is no need for any margin */
     * {
       font-family: "Courier New", monospace;      
     }
@@ -39,7 +40,7 @@
       <b>Arbitrary code execution in the Marvin Minsky 1967 </br>
       implementation of the universal Turing machine</b> 
     </p>
-    <img id="utm" class="center-fit" src="UTM_no_state.jpeg">
+    <img id="utm" src="UTM_no_state.jpeg">
 
     <p id="tape" class="large"></p>
 

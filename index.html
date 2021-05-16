@@ -15,6 +15,13 @@
     #utm {
       width:600px; height:794px; /* it's good style to specify img sizes */
     } /* given the contents of every img, there is no need for any margin */
+    
+    #diagram-and-explanation { margin:0px; padding:0px }
+    #diagram, #explanation   { margin:0px; padding:0px }
+
+    #diagram     { width:620px } /* just enough room for (image &) tape contents */
+    #description { max-width:620px } /* enhancement for small displays */
+
     * {
       font-family: "Courier New", monospace;      
     }
@@ -30,7 +37,6 @@
     .button {
       font-size: min(2vw, 24px);
     }
-    #container {height: 100%; width:100%; font-size:0;}
   </style>
 </head>
 
@@ -42,18 +48,27 @@
     </p>
     <img id="utm" src="UTM_no_state.jpeg">
 
-    <p id="tape" class="large"></p>
+    <div id="diagram-and-explanation">
+      <div id="diagram">
 
-    <button class="button" onclick="reset()">Reset</button>
-    <button class="button" onclick="back()">Back</button>
-    <button class="button" onclick="step()">Step</button>
-    <button class="button" onclick="play_pause()">Play/Pause</button>
-    <button class="button" onclick="change_speed(0.25)">Faster</button>
-    <button class="button" onclick="change_speed(4)">Slower</button>
-    <button class="button" onclick="goto_next_phase()">Next phase</button>
+        <p id="tape" class="large"></p>
 
-    <p id="step" class="legend"></p>
-    <p id="description" class="legend"></p>
+        <p>
+          <button class="button" onclick="reset()">Reset</button>
+          <button class="button" onclick="back()">Back</button>
+          <button class="button" onclick="step()">Step</button>
+          <button class="button" onclick="play_pause()">Play/Pause</button>
+          <button class="button" onclick="change_speed(0.25)">Faster</button>
+          <button class="button" onclick="change_speed(4)">Slower</button>
+          <button class="button" onclick="goto_next_phase()">Next phase</button>
+        </p>
+      </div>
+             
+      <div id="explanation">
+        <p id="step" class="legend"></p>
+        <p id="description" class="legend"></p>
+      </div>
+    </div>
 
     <p class="small">
       <b>Phases</b></br>

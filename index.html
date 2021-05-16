@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Arbitrary code execution in the universal Turing machine</title>
   <meta charset="UTF-8" />
   <meta id="ViewportSetting" name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body * {
-      -webkit-text-size-adjust:100%;
-      text-size-adjust:100%;
+    .center-fit {
+      max-height: 70vh;
     }
-    #container {
-      margin:auto; /* centers #container in body */
-    }
-    #utm {
-//      width:600px; height:794px; /* it's good style to specify img sizes */
-    } /* given the contents of every img, there is no need for any margin */
-    
-    #diagram-and-explanation { margin:0px; padding:0px }
-    #diagram, #explanation   { margin:0px; padding:0px }
-
-    #diagram     { width:620px } /* just enough room for (image &) tape contents */
-    #description { max-width:620px } /* enhancement for small displays */
-
     * {
       font-family: "Courier New", monospace;      
     }
@@ -37,7 +22,9 @@
     .button {
       font-size: min(2vw, 24px);
     }
+    #container {height: 100%; width:100%; font-size:0;}
   </style>
+  <title>Arbitrary code execution in the universal Turing machine</title>
 </head>
 
 <body>
@@ -46,29 +33,20 @@
       <b>Arbitrary code execution in the Marvin Minsky 1967 </br>
       implementation of the universal Turing machine</b> 
     </p>
-    <img id="utm" src="UTM_no_state.jpeg">
+    <img id="utm" class="center-fit" src="UTM_no_state.jpeg">
 
-    <div id="diagram-and-explanation">
-      <div id="diagram">
+    <p id="tape" class="large"></p>
 
-        <p id="tape" class="large"></p>
+    <button class="button" onclick="reset()">Reset</button>
+    <button class="button" onclick="back()">Back</button>
+    <button class="button" onclick="step()">Step</button>
+    <button class="button" onclick="play_pause()">Play/Pause</button>
+    <button class="button" onclick="change_speed(0.25)">Faster</button>
+    <button class="button" onclick="change_speed(4)">Slower</button>
+    <button class="button" onclick="goto_next_phase()">Next phase</button>
 
-        <p>
-          <button class="button" onclick="reset()">Reset</button>
-          <button class="button" onclick="back()">Back</button>
-          <button class="button" onclick="step()">Step</button>
-          <button class="button" onclick="play_pause()">Play/Pause</button>
-          <button class="button" onclick="change_speed(0.25)">Faster</button>
-          <button class="button" onclick="change_speed(4)">Slower</button>
-          <button class="button" onclick="goto_next_phase()">Next phase</button>
-        </p>
-      </div>
-             
-      <div id="explanation">
-        <p id="step" class="legend"></p>
-        <p id="description" class="legend"></p>
-      </div>
-    </div>
+    <p id="step" class="legend"></p>
+    <p id="description" class="legend"></p>
 
     <p class="small">
       <b>Phases</b></br>

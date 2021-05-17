@@ -25,6 +25,8 @@
     .legend { font-size:14px }
     .small  { font-size:12px }
     .button { font-size:18px }
+    
+    #tape   { font-size:14px }
     #tape b { font-size:16px }
 
     #container {
@@ -32,6 +34,21 @@
       margin:auto; /* centers #container in body */
     }
 
+/*
+  since displaying the UTM's tape contents needs a certain minimal width, the
+  width of #diagram-and-explanation should not become < 620px (given a font-size
+  of 14px)
+*/
+
+    #diagram-and-explanation { margin:0px; padding:0px }
+    #diagram, #explanation   { margin:0px; padding:0px }
+
+    #diagram     { width:620px } /* just enough room for (image &) tape contents */
+    #description { max-width:620px } /* enhancement for small displays */
+
+    #utm {
+      width:600px; height:794px; /* it's good style to specify img sizes */
+    } /* given the contents of every img, there is no need for any margin */
   </style>
   <title>Arbitrary code execution in the universal Turing machine</title>
 </head>
@@ -47,7 +64,7 @@
      <div id="diagram">
       <img id="utm" src="UTM_no_state.jpeg">
 
-      <p id="tape" class="large"></p>
+      <p id="tape"></p>
 
       <p>
        <button class="button" onclick="reset()">Reset</button>

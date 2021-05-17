@@ -6,6 +6,22 @@
 
   <title>Arbitrary code execution in the universal Turing machine</title>
 
+<!--
+  Nota bene: layouting is based on the constraint that the UTM's tape contents
+  should be displayed without being wrapped - as it is much easier for the reader
+  to follow if the tape is shown on a single line.
+
+  Given a font-size of 14px, this leads to a minimal page width of approx. 620px
+  (plus some white space to the left and to the right)
+
+  For wide displays, there is a first "breakpoint" at an (arbitrarily chosen)
+  width of 960px, from which on state diagram and explanation are both shown
+  side-by-side.
+
+  A second breakpoint at 1280px limits the width of the explanation column in
+  order to remain easily readable.
+-->
+
   <style>
     html, body {
       width:100%; height:100%;
@@ -47,6 +63,20 @@
 
     #diagram     { width:620px } /* just enough room for (image &) tape contents */
     #description { max-width:620px } /* enhancement for small displays */
+/*
+   besides the minimal width of 640px there is a "breakpoint" at (an arbitrarily
+   chosen) width of 960px such that on even wider displays state diagram and
+   explanation are shown side-by-side
+*/
+/*  @media (max-width:959px) {    this is the "standard" mode */
+      #container               { width:640px }
+      #diagram-and-explanation { display:block }
+/*  } */
+
+    @media (min-width:960px) { /* this is the mode for wide displays */
+      #container               { width:auto; max-width:1280px }
+      #diagram-and-explanation { display:flex }
+    }
 
     #utm {
       width:600px; height:794px; /* it's good style to specify img sizes */

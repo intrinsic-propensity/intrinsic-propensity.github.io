@@ -16,28 +16,19 @@
       text-size-adjust:100%;
     }
 
-
-    .center-fit {
-      max-height: 70vh;
-    }
-    * {
+    body {
       font-family: "Courier New", monospace;
+      font-size:14px
     }
-    .large {
-      font-size: 2vw;
-    }
-    .legend {
-      font-size: 1.5vw;
-    }
-    .small {
-      font-size: 1vw;
-    }
-    .button {
-      font-size: min(2vw, 24px);
-    }
+
+    .large  { font-size:16px }
+    .legend { font-size:14px }
+    .small  { font-size:12px }
+    .button { font-size:18px }
+    #tape b { font-size:16px }
+
     #container {height: 100%; width:100% }
 
-    #tape b { font-size:3vw }
   </style>
   <title>Arbitrary code execution in the universal Turing machine</title>
 </head>
@@ -51,7 +42,7 @@
 
     <div id="diagram-and-explanation">
      <div id="diagram">
-      <img id="utm" class="center-fit" src="UTM_no_state.jpeg">
+      <img id="utm" src="UTM_no_state.jpeg">
 
       <p id="tape" class="large"></p>
 

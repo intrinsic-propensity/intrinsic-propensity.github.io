@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     html, body {
       width:100%; height:100%;
@@ -47,20 +48,29 @@
       <b>Arbitrary code execution in the Marvin Minsky 1967 </br>
       implementation of the universal Turing machine</b>
     </p>
-    <img id="utm" class="center-fit" src="UTM_no_state.jpeg">
 
-    <p id="tape" class="large"></p>
+    <div id="diagram-and-explanation">
+     <div id="diagram">
+      <img id="utm" class="center-fit" src="UTM_no_state.jpeg">
 
-    <button class="button" onclick="reset()">Reset</button>
-    <button class="button" onclick="back()">Back</button>
-    <button class="button" onclick="step()">Step</button>
-    <button class="button" onclick="play_pause()">Play/Pause</button>
-    <button class="button" onclick="change_speed(0.25)">Faster</button>
-    <button class="button" onclick="change_speed(4)">Slower</button>
-    <button class="button" onclick="goto_next_phase()">Next phase</button>
+      <p id="tape" class="large"></p>
 
-    <p id="step" class="legend"></p>
-    <p id="description" class="legend"></p>
+      <p>
+       <button class="button" onclick="reset()">Reset</button>
+       <button class="button" onclick="back()">Back</button>
+       <button class="button" onclick="step()">Step</button>
+       <button class="button" onclick="play_pause()">Play/Pause</button>
+       <button class="button" onclick="change_speed(0.25)">Faster</button>
+       <button class="button" onclick="change_speed(4)">Slower</button>
+       <button class="button" onclick="goto_next_phase()">Next phase</button>
+      </p>
+     </div>
+
+     <div id="explanation">
+      <p id="step" class="legend"></p>
+      <p id="description" class="legend"></p>
+     </div>
+    </div>
 
     <p class="small">
       <b>Phases</b></br>

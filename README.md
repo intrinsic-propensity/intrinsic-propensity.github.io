@@ -9,3 +9,7 @@ The exploit is described in detail in [Pontus Johnson](https://www.kth.se/profil
 A Python implementation of UTM and exploit can be found at https://github.com/intrinsic-propensity/turing-machine
 
 For an alternative re-implementation of the vulnerable Minsky Turing machine, check out [Andreas Rozek's specification](https://github.com/rozek/Universal-Turing-Machine) for [Martín Ugarte's Turing machine simulator](https://turingmachinesimulator.com).
+
+## License ##
+
+[MIT License](LICENSE)

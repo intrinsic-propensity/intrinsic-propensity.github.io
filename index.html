@@ -23,6 +23,8 @@
       font-size: min(2vw, 24px);
     }
     #container {height: 100%; width:100%; font-size:0;}
+
+    #tape b { font-size:3vw }
   </style>
   <title>Arbitrary code execution in the universal Turing machine</title>
 </head>
@@ -80,7 +82,7 @@ function update() {
   state = trace[i].state;
   filename = "UTM_" + state.toString() + ".jpeg";
   document.getElementById("utm").src = filename;
-  document.getElementById("tape").innerHTML = trace[i].tape.substring(0,trace[i].head) + "<b style='font-size:3vw;'>" + trace[i].tape.substring(trace[i].head,trace[i].head+1) + "</b>" + trace[i].tape.substring(trace[i].head+1);
+  document.getElementById("tape").innerHTML = trace[i].tape.substring(0,trace[i].head) + "<b>" + trace[i].tape.substring(trace[i].head,trace[i].head+1) + "</b>" + trace[i].tape.substring(trace[i].head+1);
   document.getElementById("step").innerHTML = "Step " + i;
   describe();
 }

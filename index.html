@@ -157,6 +157,8 @@
   desc6 = "In the fourth and final phase of the second execution cycle, <i>U</i> shifts <i>T'</i>s head one step and records in <i>I'</i>s machine condition, <i>q(i)s(i)</i>, the symbol under <b>M</b>. At this point, the compromise is complete, as the injected machine, <i>I</i>, is syntactically correct, and the head of <i>U</i> is located in the injected machine condition, <i>q(i)s(i)</i>, rather than in the originally intended one, <i>q(t)s(t)</i>. The head will never again traverse the <b>Y</b> denoting the end of <i>T'</i>s tape, interpreting it instead as the end of <i>I'</i>s machine description, <i>dI</i>.";
   desc7 = "The following execution cycles will faithfully execute the injected machine, <i>I</i>, wiping the contents of the inputs provided <i>I</i>.";
 
+  document.getElementById("description").innerHTML = desc1a;
+  
   update();
 
 

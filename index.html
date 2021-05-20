@@ -119,7 +119,7 @@
        <button class="button" onclick="change_speed(0.25)">Faster</button>
        <button class="button" onclick="change_speed(4)">Slower</button>
        <button class="button" onclick="goto_next_phase()">Next phase</button>
-       <button class="button" onclick="switch_tape()">Switch tape</button>
+       <button class="button" id="tape_button" onclick="switch_tape()">Switch tape</button>
       </p>
      </div>
 
@@ -224,9 +224,11 @@ function change_speed(factor) {
 function switch_tape() {
   if(trace == malicious_trace) {
     trace = benign_trace;
+    document.getElementById("tape_button").innerHTML = "Switch to malicious tape";
   }
   else {
     trace = malicious_trace;
+    document.getElementById("tape_button").innerHTML = "Switch to benign tape";
   }
   update();
 }

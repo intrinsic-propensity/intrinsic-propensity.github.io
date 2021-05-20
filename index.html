@@ -236,39 +236,42 @@ function switch_tape() {
 function describe() {
   document.getElementById("description").innerHTML = "";
   if(trace == malicious_trace) {
-	  if(i > 0 && i <= 137) {
-	    document.getElementById("description").innerHTML = desc1a;
-	  }
-	  if(i > 137 && i <= 277) {
-	    document.getElementById("description").innerHTML = desc1b;
-	  }
-	  if(i > 277 && i <= 328) {
-	    document.getElementById("description").innerHTML = desc1c;
-	  }
-	  if(i > 328 && i <= 335) {
-	    document.getElementById("description").innerHTML = desc1d;
-	  }
-	  if(i > 335 && i <= 356) {
-	    document.getElementById("description").innerHTML = desc2a;
-	  }
-	  if(i > 356 && i <= 378) {
-	    document.getElementById("description").innerHTML = desc2b;
-	  }
-	  if(i > 378 && i <= 534) {
-	    document.getElementById("description").innerHTML = desc3;
-	  }
-	  if(i > 534 && i <= 619) {
-	    document.getElementById("description").innerHTML = desc4;
-	  }
-	  if(i > 619 && i <= 709) {
-	    document.getElementById("description").innerHTML = desc5;
-	  }
-	  if(i > 709 && i <= 719) {
-	    document.getElementById("description").innerHTML = desc6;
-	  }
-	  if(i > 719) {
-	    document.getElementById("description").innerHTML = desc7;
-	  }
+    if(i > 0 && i <= 137) {
+      document.getElementById("description").innerHTML = desc1a;
+    }
+    if(i > 137 && i <= 277) {
+      document.getElementById("description").innerHTML = desc1b;
+    }
+    if(i > 277 && i <= 328) {
+      document.getElementById("description").innerHTML = desc1c;
+    }
+    if(i > 328 && i <= 335) {
+      document.getElementById("description").innerHTML = desc1d;
+    }
+    if(i > 335 && i <= 356) {
+      document.getElementById("description").innerHTML = desc2a;
+    }
+    if(i > 356 && i <= 378) {
+      document.getElementById("description").innerHTML = desc2b;
+    }
+    if(i > 378 && i <= 534) {
+      document.getElementById("description").innerHTML = desc3;
+    }
+    if(i > 534 && i <= 619) {
+      document.getElementById("description").innerHTML = desc4;
+    }
+    if(i > 619 && i <= 709) {
+      document.getElementById("description").innerHTML = desc5;
+    }
+    if(i > 709 && i <= 719) {
+      document.getElementById("description").innerHTML = desc6;
+    }
+  if(i > 719) {
+    document.getElementById("description").innerHTML = desc7;
+  }
+  }
+  if(trace == benign_trace) {
+    document.getElementById("description").innerHTML = desc0;
   }
 }
 

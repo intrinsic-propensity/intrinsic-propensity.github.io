@@ -1,4 +1,4 @@
-This repository contains a web page with a detailled visualization of an exploit for vulnerability [CVE-2021-32471](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32471)
+This repository contains a web page with a detailed visualization of an exploit for vulnerability [CVE-2021-32471](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32471)
 
 This exploit demonstrates how carefully crafted input for a Turing machine (TM) which itself is simulated using Marvin Minsky's universal Turing machine (UTM) in fact entraps the UTM not to run the given TM (as intended) but instead to execute another TM hidden in the mentioned input.
 

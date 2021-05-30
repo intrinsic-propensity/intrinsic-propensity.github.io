@@ -10,7 +10,7 @@ Promise.all([mal_trace_promise, ben_trace_promise])
 function run(mal_trace, ben_trace) {
 	malicious_trace = mal_trace;
 	benign_trace = ben_trace;
-	trace = malicious_trace;
+	trace = benign_trace;
 
 
 	playing = false;

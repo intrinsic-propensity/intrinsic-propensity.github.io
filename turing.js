@@ -4,14 +4,16 @@ var i = 0;
 mal_trace_promise = fetch('https://intrinsic-propensity.github.io/malicious_trace.json').then(response => response.json());
 ben_trace_promise = fetch('https://intrinsic-propensity.github.io/benign_trace.json').then(response => response.json());
 a_trace_promise = fetch('https://intrinsic-propensity.github.io/a_trace.json').then(response => response.json());
+naive_trace_promise = fetch('https://intrinsic-propensity.github.io/naive_trace.json').then(response => response.json());
 
-Promise.all([mal_trace_promise, ben_trace_promise, a_trace_promise])
-	.then(values => run(values[0], values[1], values[2]));
+Promise.all([mal_trace_promise, ben_trace_promise, a_trace_promise, naive_trace_promise])
+	.then(values => run(values[0], values[1], values[2], values[3]));
 
-function run(mal_trace, ben_trace, aa_trace) {
+function run(mal_trace, ben_trace, aa_trace, nai_trace) {
 	malicious_trace = mal_trace;
 	benign_trace = ben_trace;
 	a_trace = aa_trace;
+	naive_trace = nai_trace;
 	trace = benign_trace;
 
 
@@ -97,12 +99,16 @@ function switch_tape() {
 		document.getElementById("tape_button").innerHTML = "Switch to 'A' tape";
 	}
 	else if(trace == a_trace) {
+		trace = naive_trace;
+		document.getElementById("tape_button").innerHTML = "Switch to malicious tape";
+	}
+	else if(trace == naive_trace) {
 		trace = malicious_trace;
 		document.getElementById("tape_button").innerHTML = "Switch to benign tape";
 	}
 	else {
 		trace = a_trace;
-		document.getElementById("tape_button").innerHTML = "Switch to malicious tape";
+		document.getElementById("tape_button").innerHTML = "Switch to naïve tape";
 	}
 	reset();
 }

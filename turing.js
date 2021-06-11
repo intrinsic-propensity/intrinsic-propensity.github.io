@@ -19,7 +19,8 @@ function run(mal_trace, ben_trace, aa_trace, nai_trace) {
 
 	playing = false;
 	speed = 1024;
-	desc0 = "";
+/*
+        desc0 = "";
 	desc1a = "Quoting Minsky: 'To start, the \"locate\" machine of [phase i] is put into operation. It first searches to the right to find the first state-symbol pair that matches the one represented in the \"machine condition\" area. On the path to the desired state-symbol pair, it changes all <b>0</b>'s and <b>1</b>'s to <b>A</b>'s and <b>B</b>'s. After finding the desired pair, and changing it also to <b>A</b>'s and <b>B</b>'s, it runs back to the leftmost <b>X</b> [of the machine description <i>d<sub>T</sub></i>].'";
 	desc1b = "Minsky continues: 'Next the \"copy\" machine of [phase ii] is put into operation. It starts on the leftmost <b>X</b> [of <i>d<sub>T</sub></i>], and from there shifts to the right until it has gone past the last <b>A</b> or <b>B</b> and sees for the first time some <b>0</b>'s and <b>1</b>'s. These <b>0</b>'s and <b>1</b>'s describe the new state <i>Q<sub>ij</sub></i> of <i>T</i>, the new symbol <i>S<sub>ij</sub></i> which must eventually be printed in location <b>M</b>, and the direction of motion <i>D<sub>ij</sub></i>. Next, the machine copies the  <b>0'</b>s and <b>l'</b>s representing <i>Q<sub>ij</sub></i> and <i>S<sub>ij</sub></i> into the machine-condition region; it does not print <i>D<sub>ij</sub></i> but just remembers it.'";
 	desc1c = "Minsky: 'In its third phase, the machine shifts to the left until it reaches <b>M</b>. There it erases <b>M</b> and prints (temporarily) in its place the direction <i>D<sub>ij</sub></i> (= <b>A</b> or <b>B</b>) which it has until now remembered. This information was retained in the choice between the two exit arrows of [phase ii]. Then the machine shifts to the right and changes all <b>A</b>'s and <b>B</b>'s on the tape to <b>0</b>'s and <b>1</b>'s, except for the <b>A</b> or <b>B</b> in <b>M</b>'s old location that now represents <i>D<sub>ij</sub></i>. Finally, it moves to the immediate left of the leftmost <b>X</b> [of <i>d<sub>T</sub></i>]. It erases the <i>S<sub>ij</sub></i> which is there, remembers it, and prints <b>S</b> in its place. (<b>S</b> is a special letter used only for this marking job.)'"
@@ -31,6 +32,7 @@ function run(mal_trace, ben_trace, aa_trace, nai_trace) {
 	desc5 = "The third phase replaces <i>T'</i>s head, <b>M</b>, with a symbol indicating the direction of the head. It then reverts the <b>A'</b>s and <b>B'</b>s to <b>0'</b>s and <b>1'</b>s. This is important for the attack, as the injected quintuples now assume the required form to allow execution. At the end of the third phase, <i>U'</i>s head is once again positioned far into the untrusted, user-provided data.";
 	desc6 = "In the fourth and final phase of the second execution cycle, <i>U</i> shifts <i>T'</i>s head one step and records in <i>I'</i>s machine condition, <i>q(i)s(i)</i>, the symbol under <b>M</b>. At this point, the compromise is complete, as the injected machine, <i>I</i>, is syntactically correct, and the head of <i>U</i> is located in the injected machine condition, <i>q(i)s(i)</i>, rather than in the originally intended one, <i>q(t)s(t)</i>. The head will never again traverse the <b>Y</b> denoting the end of <i>T'</i>s tape.";
 	desc7 = "The following execution cycles will faithfully execute the injected machine, <i>I</i>, wiping the contents of the inputs provided <i>I</i>.";
+*/
 
 	document.getElementById("description").innerHTML = desc1a;
 
@@ -43,7 +45,7 @@ function update() {
 	document.getElementById("utm").src = filename;
 	document.getElementById("tape").innerHTML = trace[i].tape.substring(0,trace[i].head) + "<b>" + trace[i].tape.substring(trace[i].head,trace[i].head+1) + "</b>" + trace[i].tape.substring(trace[i].head+1);
 	document.getElementById("step").innerHTML = "Step " + i;
-	describe();
+//	describe();
 }
 
 function step() {
@@ -112,7 +114,7 @@ function switch_tape() {
 	}
 	reset();
 }
-
+/*
 function describe() {
 	document.getElementById("description").innerHTML = "";
 	if(trace == malicious_trace) {
@@ -154,3 +156,4 @@ function describe() {
 		document.getElementById("description").innerHTML = desc0;
 	}
 }
+*/
